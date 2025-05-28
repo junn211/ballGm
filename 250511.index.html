@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>holdingBall</title>
+        <style>
+            canvas {
+                background: #e01a8a;
+                display: none;
+                border: 2px solid #333;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #60b244;
+            }
+            #homeScreen { 
+                background-color: #60b244;
+                width: 900px;
+                height: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: 6px solid black;
+                border-radius: 20px;
+                text-align: center;
+                padding: 20px;
+                box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            }
+            #homeScreen h1 {
+                font-size: 80px;
+                color: #ffe000;
+                -webkit-text-stroke: 2px black;
+                margin: 0;
+                line-height: 1.5;
+                font-family: 'Arial Black', sans-serif;
+                white-space: pre-line;
+            }
+            #startButton {
+                margin-top: 30px;
+                padding: 15px 40px;
+                font-size: 24px;
+                background-color: #ffe000;
+                color: black;
+                border: 4px solid black;
+                border-radius: 10px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            #startButton:hover {
+                background-color: #ffe000;
+            }
+            #restartButton {
+                padding: 10px 20px;
+                font-size: 20px;
+                background-color: #ffe000;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            .heart {
+                width: 100px;
+                height: 100px;
+                margin-right: 10px;
+            }
+            #livesContainer {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+            #description {
+                margin-top: 30px;
+                max-width: 900px;
+                padding: 20px;
+                border: 4px solid black;
+                border-radius: 15px;
+                background-color: white;
+                text-align: center;
+                font-size: 18px;
+                font-family: 'Arial', sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+            #gameClearScreen {
+                position: fixed;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                width: 900px;
+                height: 600px;
+                background-color: #f1e109;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 48px;
+                color: black;
+                font-weight: bold;
+                border: 4px solid black;
+                border-radius: 20px;
+                z-index: 1000;
+            }
+            #restartButtonFromClear {
+                padding: 10px 20px;
+                font-size: 40px;
+                background-color: #ecf022;
+                border-radius: 10px;
+                border-color: black;
+                cursor: pointer;
+            }
+
+  
+        </style>
+    </head>
+        <body>
+
+            <div id="homeScreen">
+                <h1>それでも僕は<br>メイが好き</h1>
+                <button id="startButton">START</button>
+            </div>
+            <div id="description">
+                <p>
+                    愛するメイを守るため、
+                </p>
+            </div>
+            <div id="livesContainer" style="display: none">
+                <img src="heart02.png" class="heart"/>
+                <img src="heart02.png" class="heart"/>
+                <img src="heart02.png" class="heart"/>
+                <img src="heart02.png" class="heart"/>
+                <img src="heart02.png" class="heart"/>
+            </div>
+            <canvas id="myCanvas" width="900" height="600"></canvas>
+            <div id="gameOverScreen" style="display: none;">
+                <h1>GAME OVER</h1>
+                <button id="restartButton">RESTART</button>
+            </div>
+            <img id="mei" src="images.hurinn.jpg" style="display:none">
+            <img id="kei" src="images.furinn.tanaka.jpg" style="display:none">
+            <script src="250511.js"></script>
+            <div id="gameClearScreen" style="display: none;">
+                <h1>GAME CLEAR!!</h1>
+                <button id="restartButtonFromClear">RESTART</button>
+            </div>
+        </body>
+</html>
